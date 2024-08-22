@@ -1,0 +1,49 @@
+body{
+
+    background-image: url(background_pic.jpeg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    
+}
+
+
+.topp{
+    
+    text-align: center;
+    font-family: fantasy;
+    font-size: 250%;
+    padding-bottom: 300px;
+}
+
+
+.hobby-1{
+
+    background-color: rgba(247, 247, 247, 0.7);
+    padding-bottom: 300px;
+}
+
+.hobby-2{
+
+    background-color: rgba(247, 247, 247, 0.7);
+}
+
+.hobby-3{
+
+    background-color: rgba(247, 247, 247, 0.7);
+}
+.innhold{
+
+
+    font-size: 150%;
+    padding-bottom: 300px;
+}
+
+.footer{
+
+
+    background-color: antiquewhite;
+    padding-top: 50px;
+    text-align: center;
+}
