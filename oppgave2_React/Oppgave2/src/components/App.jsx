@@ -5,6 +5,7 @@ import Profil from './profil'
 import Button from './button'
 import digitalclock from './clock'
 import MyList from './MyList'
+import List from './list'
 
 
 
@@ -16,7 +17,7 @@ import MyList from './MyList'
       <>
 
           
-          <MyList/>
+          <List/>
       
       </>
     )
