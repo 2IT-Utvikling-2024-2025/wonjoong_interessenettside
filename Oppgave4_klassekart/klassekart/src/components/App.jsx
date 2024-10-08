@@ -3,12 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Kart from './kart'
+import Textfield from './textfield'
+import Extra from './kart'
+
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
       <Kart/>
+    
+      
+
+    
+
     </>
   )
 }
