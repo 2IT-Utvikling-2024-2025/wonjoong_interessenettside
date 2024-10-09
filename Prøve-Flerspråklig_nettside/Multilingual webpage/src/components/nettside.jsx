@@ -20,11 +20,7 @@ export default function Nettside(){
     const [rate, setRate]=useState("")
 
 
-    
-    const[won,setWon]=useState(2)
-    const[dollar,setDollar]=useState(2)
-    const[kroner,setKroner]=useState(2)
-    const[eur,setEur]=useState(2)
+   
 
     const handleClick= () => {
 
