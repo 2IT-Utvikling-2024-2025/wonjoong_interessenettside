@@ -21,7 +21,7 @@ export default function Kart() {
   return (
     <>
       <div className="screen">
-        
+        <h2>tavle</h2>
 
       </div>
       
