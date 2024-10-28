@@ -2,8 +2,7 @@ import { useState } from "react";
 import './kart.css';
 
 export default function Kart() {
-  const [selectedStudent, setSelectedStudent] = useState(null); // 선택된 학생 정보
-
+  const [selectedStudent, setSelectedStudent] = useState(); 
   const students = [
     { id: 1, name: "Wonjoong", age: 17 },
     { id: 2, name: "Bjørn", age: 18 },
@@ -16,11 +15,16 @@ export default function Kart() {
   ];
 
   const handleStudentClick = (student) => {
-    setSelectedStudent(student); // 클릭된 학생 정보 설정
+    setSelectedStudent(student); 
   };
 
   return (
     <>
+      <div className="screen">
+        
+
+      </div>
+      
       <div className="text">
         <div className="main-1">
           <Group students={students.slice(0, 4)} onStudentClick={handleStudentClick} />
@@ -47,7 +51,7 @@ function Group({ students, onStudentClick }) {
         <div 
           key={student.id} 
           className="student-card" 
-          onClick={() => onStudentClick(student)} // 클릭 시 학생 정보 표시
+          onClick={() => onStudentClick(student)} 
         >
           <h4>{student.name}</h4>
         </div>
