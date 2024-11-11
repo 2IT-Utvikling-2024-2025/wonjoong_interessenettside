@@ -1,0 +1,18 @@
+nav{
+    font-size: 250%;
+    font-family: cursive;
+    background-color: white;
+    color: rgb(233, 10, 10);
+    border-radius: 10px;
+}
+
+li{
+    color: rgb(255, 251, 36);
+}
+
+
+.link{
+    color: rgb(255, 179, 0);
+}
+
+.link:hover { color:rgb(46, 28, 6); }

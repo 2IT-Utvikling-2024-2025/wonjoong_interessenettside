@@ -8,7 +8,7 @@ export default function Kart() {
     { id: 2, name: "Bjørn", age: 18 },
     { id: 3, name: "Ali", age: 16 },
     { id: 4, name: "Lee", age: 18 },
-    { id: 5, name: "Felix", age: 16 },
+    { id: 5, name: "Felix", age: 17 },
     { id: 6, name: "Alexander", age: 18 },
     { id: 7, name: "Theo", age: 16 },
     { id: 8, name: "Christoper", age: 19 },
@@ -20,7 +20,7 @@ export default function Kart() {
 
   return (
     <>
-      <div className="screen">
+      <div className="tavle">
         <h2>tavle</h2>
 
       </div>
@@ -34,8 +34,8 @@ export default function Kart() {
         </div>
       </div>
       {selectedStudent && (
-        <div className="student-info">
-          <h3>info</h3>
+        <div className="elev-info">
+          <h3>informasjon</h3>
           <p>name: {selectedStudent.name}</p>
           <p>age: {selectedStudent.age}</p>
         </div>

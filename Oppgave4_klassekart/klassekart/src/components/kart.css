@@ -40,7 +40,7 @@
     background-color:rgb(208, 149, 40); 
   }
   
-  .student-info {
+  .elev-info {
     
     font-size: 160%;
     margin: auto;
@@ -51,7 +51,7 @@
     text-align: center;
   }
   
-  .screen{
+  .tavle{
 
     background-color: rgb(64, 140, 64);
     border: 3px solid black;

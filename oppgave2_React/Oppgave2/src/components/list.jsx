@@ -1,16 +1,14 @@
 
 import { useState } from "react";
 import './CSS/list.css'
-export default function list(){
+export default function List(){
+
+
     const[todoList,setTodoList]=useState([]);
     const [text, setText] = useState("");
-
     const [editId, setEditId] = useState(null);
     const [editText, setEditText] = useState("");
-
-    
-
-    const [edit,setEdit] = useState("");
+   
 
 
     const handleSubmit = (event) => {
@@ -18,7 +16,6 @@ export default function list(){
         if (text.trim() === "") return;
 
         if (editId !== null) {
-        
             const updatedList = todoList.map((item) =>
                 item.id === editId ? { ...item, text: editText } : item
             );
@@ -26,7 +23,6 @@ export default function list(){
             setEditId(null);
             setEditText("");
         } else {
-            
             const nextTodoList = todoList.concat({
                 id: todoList.length,
                 text,
@@ -34,7 +30,6 @@ export default function list(){
             });
             setTodoList(nextTodoList);
             setText("");
-            
         }
         
 
@@ -44,8 +39,8 @@ export default function list(){
 
     const handleDelete = (id) => {
         const filteredList = todoList.filter((item) => item.id !== id);
-        setTodoList(filteredList);}
-
+        setTodoList(filteredList);
+    };
 
     const handleEdit = (id, text) => {
         setEditId(id);
@@ -58,7 +53,7 @@ export default function list(){
             <label>
 
                 <div className="nav">
-                <h1>To Do </h1>
+                <h1>List</h1>
                 </div>
                 
                 <input 
@@ -88,9 +83,13 @@ export default function list(){
 
            
         </form>
+        <footer>@2024</footer>
         
 
     </>
     )
 }
+
           
+
+
