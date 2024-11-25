@@ -1,61 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './kart.css';
+import { Link } from 'react-router-dom';
 
 export default function Kart() {
-  const [selectedStudent, setSelectedStudent] = useState(); 
-  const students = [
-    { id: 1, name: "Wonjoong", age: 17 },
-    { id: 2, name: "Bjørn", age: 18 },
-    { id: 3, name: "Ali", age: 16 },
-    { id: 4, name: "Lee", age: 18 },
-    { id: 5, name: "Felix", age: 17 },
-    { id: 6, name: "Alexander", age: 18 },
-    { id: 7, name: "Theo", age: 16 },
-    { id: 8, name: "Christoper", age: 19 },
-  ];
+  const [classes, setClasses] = useState([]);
+  
+  useEffect(() => {
+    const fetchClasses = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/classes");
+        const data = await response.json();
+        setClasses(data);
+      } catch (error) {
+        console.error("Kan ikke hente klasseinformasjon", error);
+      }
+    };
 
-  const handleStudentClick = (student) => {
-    setSelectedStudent(student); 
-  };
+    fetchClasses();
+  }, []);
 
   return (
-    <>
-      <div className="tavle">
-        <h2>tavle</h2>
-
+    <div className="kart">
+      <h2>Velg en klasse</h2>
+      <div className="class-list">
+        {classes.map((cls) => (
+          <div key={cls.id} className="class-card">
+            <Link 
+              to={`/class/${cls.id}`} 
+              className="class-link"
+            >
+              <h4>{cls.name}</h4>
+            </Link>
+          </div>
+        ))}
       </div>
-      
-      <div className="text">
-        <div className="main-1">
-          <Group students={students.slice(0, 4)} onStudentClick={handleStudentClick} />
-        </div>
-        <div className="main-2">
-          <Group students={students.slice(4)} onStudentClick={handleStudentClick} />
-        </div>
-      </div>
-      {selectedStudent && (
-        <div className="elev-info">
-          <h3>informasjon</h3>
-          <p>name: {selectedStudent.name}</p>
-          <p>age: {selectedStudent.age}</p>
-        </div>
-      )}
-    </>
-  );
-}
-
-function Group({ students, onStudentClick }) {
-  return (
-    <div className="group">
-      {students.map((student) => (
-        <div 
-          key={student.id} 
-          className="student-card" 
-          onClick={() => onStudentClick(student)} 
-        >
-          <h4>{student.name}</h4>
-        </div>
-      ))}
     </div>
   );
 }

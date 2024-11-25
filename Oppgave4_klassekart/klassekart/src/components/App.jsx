@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Kart from './kart'
-import Extra from './kart'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Kart from './kart';
+import NoPage from './noPage';
+import Student from './student'; 
+import Class from './class';
 
 function App() {
-  
-
   return (
-    <>
-      <Kart/>      
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Kart />} />
+        <Route path="class/:id" element={<Class />} />
+        <Route path="student/:id" element={<Student />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
